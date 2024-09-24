@@ -30,7 +30,7 @@ variable "project_id" {
 variable "pool_id" {
   type        = string
   description = "Workload Identity Pool ID"
-  default     = "github-com"
+  default     = "github-action"
   validation {
     condition = substr(var.pool_id, 0, 4) != "gcp-" && length(regex("([a-z0-9-]{4,32})", var.pool_id)) == 1
     error_message = join(" ", [
